@@ -1,0 +1,15 @@
+class Solution {
+public:
+    vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+        vector<int> result;
+        unordered_set<int> setofnums1,setofnums2;
+        for(auto element:nums1)
+            setofnums1.insert(element);
+        for(auto element:nums2)
+            setofnums2.insert(element);
+        for(auto it=setofnums1.begin();it!=setofnums1.end();it++) 
+            if(setofnums2.find(*it)!=setofnums2.end())
+                result.push_back(*it);
+    return result;
+    }
+};
