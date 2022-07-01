@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int distributeCandies(vector<int>& candyType) {
+        int eat=candyType.size()/2;
+        sort(candyType.begin(),candyType.end());
+        int diff=1;
+        for(int i=0;i<candyType.size()-1;i++)
+        if(candyType[i]!=candyType[i+1])
+            diff++;
+        if(diff>=eat)
+            return eat;
+        else 
+            return diff;
+    }
+};
